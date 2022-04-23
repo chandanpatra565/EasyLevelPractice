@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import './App.css';
-import Cercle from './component/cercle';
-import Squre from './component/squre';
+import circle from './component/cercle';
+import square from './component/squre';
 function App() {
   const [shape,updateshape]=useState("squre");
   const [showShape,updateshowShape]=useState([]);
@@ -18,10 +18,12 @@ function App() {
   }
   return (
     <>
+    <div id="shape-creator">
       <select onChange={SelectShape} id="shape-creator">
         <option value="cercle">cercle</option>
         <option value="squre" selected>Squre</option>
       </select>
+    </div>
       <input type="button" value="Add shape" onClick={Submit}></input>
       
         <div id="shapes-holder">
@@ -29,10 +31,10 @@ function App() {
           {
             showShape.map((element,index)=>{
               if(element==="cercle"){
-                return <Cercle key={index} Index={index}>{index}</Cercle>
+                return <circle key={index} Index={index}>{index}</circle>
               }
               if(element==="squre"){
-                return <Squre key={index} Index={index}></Squre>
+                return <square key={index} Index={index}></square>
               }
             })
           }
