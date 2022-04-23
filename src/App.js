@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
 
+
+import React, { useState } from 'react';
+import './App.css';
+import Cercle from './component/cercle';
+import Squre from './component/squre';
 function App() {
+  const [shape,updateshape]=useState("squre");
+  const [showShape,updateshowShape]=useState([]);
+  const SelectShape=(event)=>{
+    updateshape(event.target.value);
+  }
+  const Submit=()=>{
+    
+    updateshowShape((privious)=>{
+      return [...privious,shape];
+    })
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <select onChange={SelectShape} id="shape-creator">
+        <option value="cercle">cercle</option>
+        <option value="squre" selected>Squre</option>
+      </select>
+      <input type="button" value="Add shape" onClick={Submit}></input>
+      
+        <div id="shapes-holder">
+
+          {
+            showShape.map((element,index)=>{
+              if(element==="cercle"){
+                return <Cercle key={index} Index={index}>{index}</Cercle>
+              }
+              if(element==="squre"){
+                return <Squre key={index} Index={index}></Squre>
+              }
+            })
+          }
+        </div>
+
+       
+
+      
+    </>
   );
 }
 
