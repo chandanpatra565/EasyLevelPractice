@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/EasyLevelPractice/static/css/main.e0bb2bab.css",
+    "main.js": "/EasyLevelPractice/static/js/main.e7456f8e.js",
+    "index.html": "/EasyLevelPractice/index.html",
+    "main.e0bb2bab.css.map": "/EasyLevelPractice/static/css/main.e0bb2bab.css.map",
+    "main.e7456f8e.js.map": "/EasyLevelPractice/static/js/main.e7456f8e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0bb2bab.css",
+    "static/js/main.e7456f8e.js"
+  ]
+}
